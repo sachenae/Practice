@@ -12,13 +12,13 @@ import registerServiceWorker from './registerServiceWorker';
 import setupSocket from './sockets'
 import reducers from './reducers'
 import handleNewMessage from './sagas'
-import username from '.utils/name'
+import username from './utils/name'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
     reducers,
-    applyMiddleware(sagaMiddleWare)
+    applyMiddleware(sagaMiddleware)
 )
 
 const socket = setupSocket(store.dispatch, username)

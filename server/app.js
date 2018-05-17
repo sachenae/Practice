@@ -32,7 +32,7 @@ wss.on('connection', (ws) => {
             }
             case 'ADD_MESSAGE':
             broadcast({
-                type: 'ADD_MESSAGE'
+                type: 'ADD_MESSAGE',
                 message: data.message,
                 author: data.author
             }, ws)
